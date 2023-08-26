@@ -6,6 +6,10 @@ const path = require('path');
 const dotenv = require('dotenv');
 require('ejs');
 
+// Se conecta la Base de Datos
+const { conectarDB } = require('./database/database');
+conectarDB();
+
 const app = express();
 const port = process.env.PORT || 4000;
 
