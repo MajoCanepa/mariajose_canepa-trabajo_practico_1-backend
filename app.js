@@ -31,7 +31,8 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas
-//app.use(require('./routes/post.routes'));
+app.use(require('./routes/usuarios.routes'));
+app.use(require('./routes/post.routes'));
 
 // Si la petición no coincide con ninguna de las rutas declaradas, mostrar error 404
 app.use((req, res, next) => {

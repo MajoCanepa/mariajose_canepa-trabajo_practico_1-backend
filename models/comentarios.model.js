@@ -7,6 +7,10 @@ const Comentarios = sequelize.define('Comentarios', {
         autoIncrement: true,
         allowNull:false,
     },
+    idPost:{
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
     comentario: {
         type: DataTypes.TEXT,
         allowNull: false,
