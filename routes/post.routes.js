@@ -1,4 +1,4 @@
-const {Router} = require('express');
+const { Router } = require('express');
 const router = Router();
 
 const {
@@ -9,7 +9,7 @@ const {
     eliminarPost
 } = require('../controllers/post.controller');
 
-router.get('/obtenerPost/:id/:idUsuario', obtenerPosts);
+router.get('/obtenerPosts/:id/:idUsuario', obtenerPosts);
 router.get('/obtenerPost/:id/:idUsuario', obtenerPost);
 router.post('/crearPost', crearPost);
 router.put('/actualizarPost/:id/:idUsuario', actualizarPost);

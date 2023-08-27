@@ -1,5 +1,5 @@
 const Post = require('../models/post.model');
-ctrl = {};
+const ctrl = {};
 
 ctrl.obtenerPosts = async (req, res) => {
   const{ idUsuario } = req.params;

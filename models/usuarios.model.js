@@ -22,8 +22,8 @@ const Usuario = sequelize.define('Usuario', {
     },
 });
 
-Usuario.sync({force: true }).then(() => {
-    console.log('Tabla de Post Creada');
+Usuario.sync({force: false }).then(() => {
+    console.log('Tabla de Usuarios Creada');
 });
 
 module.exports = Usuario;

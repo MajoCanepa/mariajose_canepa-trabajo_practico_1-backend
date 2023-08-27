@@ -1,4 +1,4 @@
-const { Usuario } = require('../models/usuarios.model');
+const Usuario  = require('../models/usuarios.model');
 
 const ctrl = {};
 
@@ -40,4 +40,6 @@ ctrl.loginUsuario = async (req, res) => {
             message: 'Error al iniciar sesión'
         })
     }
-}
+};
+
+module.exports = ctrl;
