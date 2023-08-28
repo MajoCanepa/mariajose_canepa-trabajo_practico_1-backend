@@ -47,6 +47,7 @@ ctrl.crearPost = async (req, res) => {
     try {
         //se crea una nueva instancia de post
         const nuevoPost = new Post({
+            idUsuario,
             titulo,
             contenido,
             fecha
