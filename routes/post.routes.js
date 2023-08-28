@@ -9,9 +9,9 @@ const {
     eliminarPost
 } = require('../controllers/post.controller');
 
-router.get('/obtenerPosts/:id/:idUsuario', obtenerPosts);
+router.get('/obtenerPosts/:idUsuario', obtenerPosts);
 router.get('/obtenerPost/:id/:idUsuario', obtenerPost);
-router.post('/crearPost', crearPost);
+router.post('/crearPost/:idUsuario', crearPost);
 router.put('/actualizarPost/:id/:idUsuario', actualizarPost);
 router.delete('/eliminarPost/:id/:idUsuario', eliminarPost);
 

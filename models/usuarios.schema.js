@@ -24,7 +24,7 @@ const validaciones2 = checkSchema({
             options:{min:6}
         }
     },
-    user:{
+    nombreApellido:{
         notEmpty:{
             errorMessage:"El usuario  es obligatorio"
         },
