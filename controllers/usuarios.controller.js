@@ -1,4 +1,5 @@
 const Usuario  = require('../models/usuarios.model');
+const bcrypt = require('bcrypt');
 
 const ctrl = {};
 
@@ -9,11 +10,15 @@ ctrl.crearUsuarios = async (req, res) => {
         if(usuario){
             return res.status(400).json({message: 'El usuario ya existe'});
         }
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+
         const nuevoUsuario = await Usuario.create({
             nombreApellido,
             correo,
-            password
+            password: hashedPassword,
         });
+
         return res.status(201).json(nuevoUsuario);
     }catch (error){
         console.log('Error al crear el usuario', error);
@@ -30,9 +35,13 @@ ctrl.loginUsuario = async (req, res) => {
         if(!usuario){
             return res.status(400).json({message: 'El usuario no existe'});
         }
-        if(usuario.password !== password){
+
+        const passwordMatch = await bcrypt.compare(password, usuario.password);
+
+        if(!passwordMatch){
             return res.status(400).json({message: 'La contraseña es incorrecta'});
         }
+        
         return res.status(200).json({message: 'Login correcto'});
     }catch (error){
         console.log('Error al iniciar sesión', error);
