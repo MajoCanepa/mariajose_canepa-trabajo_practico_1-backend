@@ -47,6 +47,6 @@ const Post = sequelize.define('Post', {
 
 Post.sync({force: false }).then(() => {
     console.log('Tabla de Posts Creada');
-})
+});
 
 module.exports = Post;

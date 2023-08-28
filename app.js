@@ -8,6 +8,7 @@ require('ejs');
 
 // Se conecta la Base de Datos
 const { conectarDB } = require('./database/database');
+const {configurarRelaciones} = require('./models/relaciones.model');
 conectarDB();
 
 const app = express();
@@ -29,6 +30,9 @@ app.use(express.urlencoded({extended: true}));
 
 // Archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Configurar relaciones de la base de datos 
+configurarRelaciones();
 
 // Rutas
 app.use(require('./routes/usuarios.routes'));

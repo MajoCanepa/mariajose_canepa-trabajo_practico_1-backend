@@ -39,6 +39,7 @@ ctrl.obtenerPost = async (req, res) => {
 
 ctrl.crearPost = async (req, res) => {
     const {
+        idUsuario,
         titulo,
         contenido,
         fecha

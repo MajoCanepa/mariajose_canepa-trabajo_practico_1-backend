@@ -43,7 +43,9 @@ const Comentarios = sequelize.define('Comentarios', {
 
 Comentarios.sync({force: false }).then(() => {
     console.log('Tabla de Comentarios Creada');
-})
+});
+
+
 
 
 module.exports = Comentarios; 

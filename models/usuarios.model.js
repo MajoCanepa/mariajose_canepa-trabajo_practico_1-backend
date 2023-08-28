@@ -26,4 +26,5 @@ Usuario.sync({force: false }).then(() => {
     console.log('Tabla de Usuarios Creada');
 });
 
+
 module.exports = Usuario;
